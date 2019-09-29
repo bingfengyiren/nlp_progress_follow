@@ -10,4 +10,3 @@ Welcome to nlp_progress_follow's documentation!
    :maxdepth: 2
 
    自然语言理解
-   bert
