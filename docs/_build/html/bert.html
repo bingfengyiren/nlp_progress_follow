@@ -90,7 +90,10 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="自然语言理解.html">1. 自然语言理解</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">bert论文翻译</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">bert论文翻译</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">摘要</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -157,7 +160,20 @@
             
   <div class="section" id="bert">
 <h1>bert论文翻译<a class="headerlink" href="#bert" title="Permalink to this headline">¶</a></h1>
-<p><a href="#id1"><span class="problematic" id="id2">`原始论文地址&lt;https://arxiv.org/pdf/1810.04805.pdf&gt;`_</span></a></p>
+<p>原始论文地址:<a class="reference external" href="https://arxiv.org/pdf/1810.04805.pdf">https://arxiv.org/pdf/1810.04805.pdf</a></p>
+<div class="section" id="id1">
+<h2>摘要<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>本论文介绍了一种称为bert的新语言模型，该模型表示来源于Transfromer的双向编码表示。不同于其它
+语言模型的是，bert旨在在所有层的左右上下文上通过联合概率的方式，来预训练未标记文本的深层双向表
+示形式。因此，仅需要调整模型的输出层就可以在许多任务中创建一个state-of-the-art的模型，比
+如：问答、语言理解，不需要针对特定任务做太多结构的修改。</p>
+<p>BERT概念简单，但实践效果非常好。在11个NLP任务中都取得了最好结果。其中，GLUE数据集的评分提升到了
+80.5%(绝对提升了7.7%)，MultiNLI的精度提升到了86.7%（绝对提升4.6%），SQuAD v1.1的F1值提升到
+了93.2%（绝对提升1.5个点），SQuAD v2.0的F1提升到了83.1（绝对提升5.1个点）。</p>
+<p>GLUE：语言理解任务数据
+MultiNLI：自然语言推理任务数据
+SQuAD：阅读理解任务数据</p>
+</div>
 </div>
 
 
