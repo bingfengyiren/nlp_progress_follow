@@ -9,4 +9,5 @@ Welcome to nlp_progress_follow's documentation!
 .. toctree::
    :maxdepth: 2
 
-   自然语言理解 
+   自然语言理解
+   bert
