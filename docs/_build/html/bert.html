@@ -43,7 +43,8 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="1. 自然语言理解" href="自然语言理解.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,8 +88,9 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="自然语言理解.html">1. 自然语言理解</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">bert论文翻译</a></li>
 </ul>
 
             
@@ -156,44 +158,6 @@
   <div class="section" id="bert">
 <h1>bert论文翻译<a class="headerlink" href="#bert" title="Permalink to this headline">¶</a></h1>
 <p>原始论文地址:<a class="reference external" href="https://arxiv.org/pdf/1810.04805.pdf">https://arxiv.org/pdf/1810.04805.pdf</a></p>
-<div class="section" id="id1">
-<h2>摘要<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>本论文介绍了一种称为bert的新语言模型，该模型表示来源于Transfromer的双向编码表示。不同于其它
-语言模型的是，bert旨在在所有层的左右上下文上通过联合概率的方式，来预训练未标记文本的深层双向表
-示形式。因此，仅需要调整模型的输出层就可以在许多任务中创建一个state-of-the-art的模型，比
-如：问答、语言理解，不需要针对特定任务做太多结构的修改。
-BERT概念简单，但实践效果非常好。在11个NLP任务中都取得了最好结果。其中，GLUE数据集的评分提升到了
-80.5%(绝对提升了7.7%)，MultiNLI的精度提升到了86.7%（绝对提升4.6%），SQuAD v1.1的F1值提升到
-了93.2%（绝对提升1.5个点），SQuAD v2.0的F1提升到了83.1（绝对提升5.1个点）。</p>
-</div>
-<div class="section" id="id2">
-<h2>1 引言<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>语言模型预训练已被证明可以有效地改善许多自然语言处理任务。包括句子级的任务，比如自然语言推断和释义，
-旨在通过对句子间的关系进行分析来预测它们之间的联系，以及词级别的任务，比如命名实体识别和问答，又需要
-模型有更细粒度的输出。</p>
-<p>将语言模型应用于下游任务的方式有两种：feature-based和fine-tuning。</p>
-<p>我们认为当前的技术限制了预训练表示的能力，特别是对于fine-tuning的方式。主要限制的点在于标准语言模型
-是单向的，而这限制了在预训练过程中模型的选择。比如说，在OpenAI GPT中，作者使用了一种从左到右的一种结构，
-这样在Transformer的self-attention层每个词就只能参与到它前面词的计算。这种限制对于句子级别的任务影响
-还相对小一些，但是当对词级别的任务微调时就影响非常大，比如问答，双向上下文就显得尤为重要。</p>
-<p>这篇论文中，我们通过BERT提升了基于fine-tuning的方法。BERT受到Closze任务的启发，通过引入MLM(masked language model)
-的预训练目标，来缓解前面提到的单向限制。MLM随机掩盖输入中的若干词，而目标是基于上下文预测出原始的单词。
-不同于从左到右的预训练语言模型，MLM</p>
-<ul class="simple">
-<li>证明了双向预训练在语言模型表示中的重要性。不同于Radford等人的单向预训练语言模型，BERT通过MLM预训练深度双向语言表示。和Peters等人独立使用从左到有，从右到左的浅层连接也不相同。</li>
-<li>预训练表示降低了特定任务体系结构设计的需求。BERT是首个基于fine-tuning表示的模型，在许多的句子和词级别的任务上都获得了最好的效果，优于许多任务的特定结构。</li>
-<li>BERT在11个NLP任务上获取的最好结果。代码仓库：<a class="reference external" href="https://github.com/">https://github.com/</a> google-research/bert。</li>
-</ul>
-</div>
-<div class="section" id="id3">
-<h2>2 相关工作<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>预训练通用语言表示有着很长的历史，这里我们简单回顾一下使用最广泛的方法。</p>
-<p>2.1 feature-based无监督方法</p>
-<p>2.2 fine-tuning无监督方法</p>
-<p>GLUE：语言理解任务数据
-MultiNLI：自然语言推理任务数据
-SQuAD：阅读理解任务数据</p>
-</div>
 </div>
 
 
@@ -201,6 +165,13 @@ SQuAD：阅读理解任务数据</p>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="自然语言理解.html" class="btn btn-neutral float-left" title="1. 自然语言理解" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
